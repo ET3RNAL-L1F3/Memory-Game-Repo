@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class MemoryGame : MonoBehaviour
 {
+    // Reference to the Game Manager
+    private GameManager gameManager;
+
     //Suit and rank names to match Free_Playing_cards naming convention
     string[] cardSuits = new string[] { "Club", "Spades", "Diamond", "Heart" };
     string[] cardRanks = new string[] {"2", "3", "4", "5","6","7","8","9","10",
@@ -29,6 +32,9 @@ public class MemoryGame : MonoBehaviour
         {
             Instance = this;
         }
+
+        // Get reference to the Game Manager
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         // Reference for all cards on the GameBoard
         cards = transform.GetComponentsInChildren<Card>();
@@ -72,6 +78,9 @@ public class MemoryGame : MonoBehaviour
             //Remove Cards from the board
             firstCard.Hide();
             secondCard.Hide();
+
+            //Update the score
+            gameManager.UpdateScore();
         }
         else
         {

@@ -9,17 +9,6 @@ public class Card : MonoBehaviour
     private string rank;
     private bool faceUp = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void GenerateCard (string m_suit, string m_rank)
     {
